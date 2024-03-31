@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-center">
+  <img
+    [src]="url"
+    [alt]="alt"
+    srcset=""
+    class="card-img-top"
+    [ngStyle]="{ display: hasBeenLoaded ? '' : 'none'}"
+    (load)="onLoaded()"
+  />
+  <img
+    *ngIf="!hasBeenLoaded"
+    src="assets/loader.svg"
+    height="50"
+    width="50"
+    class="mt-4"
+  />
+</div>
